@@ -428,7 +428,7 @@ static u16 sbp_u8_array_to_u16(u8 *array_start)
  *         callback, and `SBP_CRC_ERROR` (-2) if a CRC error
  *         has occurred. Thus can check for >0 to ensure good processing.
  */
-s8 sbp_process(sbp_state_t *s, s32 (*read)(u8 *buff, u32 n, void *context))
+s8 sbp_process(sbp_state_t *s, u32 (*read)(u8 *buff, u32 n, void *context))
 {
   /* Sanity checks */
   if ((0 == s) || (0 == read)) {
